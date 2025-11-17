@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Neon Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>2048 <span class="version-badge">Neon Edition</span></h1>
+            <div class="scores">
+                <div class="score-box">
+                    <div class="score-label">SCORE</div>
+                    <div id="score" aria-label="Current Score">0</div>
+                </div>
+                <div class="score-box">
+                    <div class="score-label">BEST</div>
+                    <div id="best" aria-label="Best Score">0</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="player-section">
+            <h2>Player Hall of Fame</h2>
+            <div class="player-input">
+                <input type="text" id="player-name" placeholder="Enter your name" maxlength="20" aria-label="Player Name Input">
+                <button id="add-player" aria-label="Add Player">Add Player</button>
+                <button id="download-names" aria-label="Download Player Names">Download Names</button>
+            </div>
+            <div id="player-list" aria-label="Player List">
+                <ul id="players"></ul>
+            </div>
+        </div>
+
+        <div class="theme-selector">
+            <label for="theme-select" aria-label="Select Theme">Theme:</label>
+            <select id="theme-select" aria-label="Theme Selector">
+                <option value="neon">Neon</option>
+                <option value="classic">Classic</option>
+            </select>
+        </div>
+
+        <div class="game-intro">
+            <p>Blast through the numbers in this electrifying <strong>2048 Neon Edition!</strong> Can you conquer the grid?</p>
+            <button id="new-game" aria-label="Start New Game">New Game</button>
+        </div>
+
+        <div class="game-container">
+            <div id="game-board"></div>
+        </div>
+
+        <div class="game-message">
+            <p></p>
+            <div>
+                <button id="try-again" aria-label="Try Again">Try again</button>
+            </div>
+        </div>
+
+        <div class="leaderboard-section">
+            <h3>Top Scores</h3>
+            <div id="leaderboard" aria-label="Leaderboard">
+                <ul id="top-scores"></ul>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p><strong>How to play:</strong> Use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one! Press 'R' for quick restart.</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
